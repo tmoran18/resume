@@ -1,17 +1,23 @@
-import { Flex, Heading } from '@chakra-ui/react'
+import { Flex, Heading } from "@chakra-ui/react";
+import { Headshot } from "./Headshot";
+import { About } from "./About";
 
-export const Hero = ({ title }: { title: string }) => (
+export const Hero = () => (
   <Flex
-    justifyContent="center"
+    direction={{ base: "column", lg: "row" }}
+    textAlign={{ base: "center", lg: "left" }}
+    justifyContent="space-between"
+    mx="auto !important"
+    gap={14}
     alignItems="center"
-    height="100vh"
-    bgGradient="linear(to-l, heroGradientStart, heroGradientEnd)"
-    bgClip="text"
+    color={"white"}
+    maxW={"4xl"}
   >
-    <Heading fontSize="6vw">{title}</Heading>
+    <Headshot />
+    <About
+      title="Front End Developer"
+      name="Tim Moran"
+      description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae praesentium voluptate assumenda, suscipit corporis ipsam eligendi animi tempora nulla sit consequatur architecto."
+    />
   </Flex>
-)
-
-Hero.defaultProps = {
-  title: 'with-chakra-ui-typescript',
-}
+);

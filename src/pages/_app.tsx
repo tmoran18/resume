@@ -1,14 +1,20 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import "@fontsource/poppins";
 
-import theme from '../theme'
-import { AppProps } from 'next/app'
+import { ChakraProvider } from "@chakra-ui/react";
+
+import Layout from "../components/Layout";
+
+import theme from "../theme";
+import { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ChakraProvider>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;
